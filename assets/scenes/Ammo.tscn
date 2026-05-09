@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ov2kygsbhv2n"]
 
-[ext_resource type="Script" uid="uid://vxnqot1bu6gi" path="res://assets/scripts/interactable.gd" id="1_0huh5"]
+[ext_resource type="Script" uid="uid://crm5qx7oqhy74" path="res://assets/scripts/buyable.gd" id="1_0huh5"]
 [ext_resource type="Texture2D" uid="uid://dkcnjjw8eelus" path="res://assets/sprites/knife.png" id="1_gbcli"]
 [ext_resource type="Texture2D" uid="uid://3rjxvadp77mh" path="res://assets/sprites/knife_highlight.png" id="3_52kf4"]
 
@@ -9,9 +9,9 @@
 [node name="Ammo" type="Area3D" unique_id=1006854039 node_paths=PackedStringArray("sprite", "highlightSprite") groups=["Interactables"]]
 collision_layer = 2
 script = ExtResource("1_0huh5")
+highlightColor = Color(0, 0, 1, 1)
 sprite = NodePath("Sprite")
 highlightSprite = NodePath("HighlightSprite")
-highlightColor = Color(0, 0, 0.77254903, 1)
 
 [node name="Sprite" type="Sprite3D" parent="." unique_id=1472740387]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
