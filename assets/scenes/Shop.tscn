@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bwqc86x8c5lac"]
+
+[ext_resource type="PackedScene" uid="uid://ov2kygsbhv2n" path="res://assets/scenes/Ammo.tscn" id="1_ur8y0"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_882je"]
+size = Vector3(2, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ur8y0"]
+size = Vector3(2, 1, 1)
+
+[node name="Shop" type="Node3D" unique_id=2017740725]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1545296301]
+mesh = SubResource("BoxMesh_882je")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1363141799]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=35118096]
+shape = SubResource("BoxShape3D_ur8y0")
+
+[node name="ShopItems" type="Node3D" parent="." unique_id=195103773]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.89911944, 0)
+
+[node name="Ammo" parent="ShopItems" unique_id=1006854039 instance=ExtResource("1_ur8y0")]
