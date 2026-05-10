@@ -9,6 +9,9 @@ var camera: Camera3D
 var camera_movement: Vector2
 var raycast: RayCast3D
 
+# Stores the last collider the raycast hit, used to unhighlight
+var lastCollider: CollisionObject3D
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Move this to some game manager once we have main menu and stuff
@@ -21,13 +24,24 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	var collider = raycast.get_collider()
+	if collider != lastCollider:
+		if collider != null and collider.is_in_group("Interactables"):
+			(collider as Interactable).highlight()
+
+		if lastCollider != null and lastCollider.is_in_group("Interactables"):
+			(lastCollider as Interactable).unhighlight()
+		
+		lastCollider = collider
 
 
 func _input(event):
 	if event is InputEventMouseMotion:
 		var mouse_input = -event.relative * mouse_sense
 		camera_movement += mouse_input
+	elif event is InputEventMouseButton:
+		if event.is_action_pressed("interact") and lastCollider is Interactable:
+			(lastCollider as Interactable).interact()
 
 func _physics_process(delta):
 	var input = Input.get_vector("left", "right", "up", "down")

@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://ov2kygsbhv2n"]
+
+[ext_resource type="Script" uid="uid://crm5qx7oqhy74" path="res://assets/scripts/buyable.gd" id="1_0huh5"]
+[ext_resource type="Texture2D" uid="uid://cnu20smoiyemv" path="res://assets/sprites/banana slices.png" id="2_sm4m1"]
+[ext_resource type="Texture2D" uid="uid://cyhby4ewaqm12" path="res://assets/sprites/banana slices_highlight.png" id="3_o530y"]
+[ext_resource type="Texture2D" uid="uid://chyogxa51555s" path="res://assets/sprites/x.png" id="4_sm4m1"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_0huh5"]
+
+[node name="Ammo" type="Area3D" unique_id=1006854039 node_paths=PackedStringArray("sprite", "highlightSprite") groups=["Interactables"]]
+collision_layer = 2
+script = ExtResource("1_0huh5")
+price = 2
+labelHighlightColor = Color(0, 0, 1, 1)
+sprite = NodePath("Sprite")
+highlightSprite = NodePath("HighlightSprite")
+
+[node name="Sprite" type="Sprite3D" parent="." unique_id=1472740387]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+modulate = Color(0.64, 0.64, 0.64, 1)
+billboard = 1
+texture = ExtResource("2_sm4m1")
+
+[node name="HighlightSprite" type="Sprite3D" parent="." unique_id=1198975463]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+visible = false
+billboard = 1
+texture = ExtResource("3_o530y")
+
+[node name="x" type="Sprite3D" parent="." unique_id=2077551502]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+visible = false
+billboard = 1
+render_priority = 2
+texture = ExtResource("4_sm4m1")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=1348884690]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+billboard = 1
+render_priority = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=592932519]
+shape = SubResource("SphereShape3D_0huh5")
