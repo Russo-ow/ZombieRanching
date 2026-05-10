@@ -13,8 +13,9 @@ size = Vector3(3, 1, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_ur8y0"]
 size = Vector3(2, 1, 1)
 
-[node name="Shop" type="Node3D" unique_id=2017740725]
+[node name="Shop" type="Node3D" unique_id=2017740725 node_paths=PackedStringArray("shop_items")]
 script = ExtResource("1_e1k3f")
+shop_items = [NodePath("ShopItems/Gun"), NodePath("ShopItems/Ammo"), NodePath("ShopItems/Health")]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1545296301]
 mesh = SubResource("BoxMesh_882je")
