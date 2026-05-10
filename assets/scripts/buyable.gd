@@ -38,6 +38,7 @@ func interact():
 
 	if canBuy:
 		# Deduct price from player wallet
+		# Add item to player inventory
 		buySuccess.emit()
 		if(limited):
 			inStock = false

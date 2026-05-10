@@ -6,9 +6,6 @@
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_b5i5n"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_jawt3"]
-size = Vector3(0.1, 0.1, 1)
-
 [node name="Player" type="CharacterBody3D" unique_id=1648625714]
 script = ExtResource("1_jawt3")
 speed = 200
@@ -27,8 +24,3 @@ target_position = Vector3(0, 0, -1.5)
 collision_mask = 3
 collide_with_areas = true
 collide_with_bodies = false
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Camera3D" unique_id=1668808474]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10837448, 0, -1.483022)
-visible = false
-mesh = SubResource("BoxMesh_jawt3")

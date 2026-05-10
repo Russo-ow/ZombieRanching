@@ -12,7 +12,7 @@ collision_layer = 2
 script = ExtResource("1_xxha0")
 price = 12
 limited = true
-highlightColor = Color(0, 0, 1, 1)
+labelHighlightColor = Color(0, 0, 1, 1)
 sprite = NodePath("Sprite")
 highlightSprite = NodePath("HighlightSprite")
 
