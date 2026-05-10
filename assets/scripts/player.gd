@@ -39,6 +39,9 @@ func _input(event):
 	if event is InputEventMouseMotion:
 		var mouse_input = -event.relative * mouse_sense
 		camera_movement += mouse_input
+	elif event is InputEventMouseButton:
+		if event.is_action_pressed("interact") and lastCollider is Interactable:
+			(lastCollider as Interactable).interact()
 
 func _physics_process(delta):
 	var input = Input.get_vector("left", "right", "up", "down")

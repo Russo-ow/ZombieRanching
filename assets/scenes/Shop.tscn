@@ -1,14 +1,20 @@
 [gd_scene format=3 uid="uid://bwqc86x8c5lac"]
 
+[ext_resource type="Script" uid="uid://bp1tadx5022fn" path="res://assets/scripts/shop.gd" id="1_e1k3f"]
 [ext_resource type="PackedScene" uid="uid://ov2kygsbhv2n" path="res://assets/scenes/Ammo.tscn" id="1_ur8y0"]
+[ext_resource type="AudioStream" uid="uid://1uuxsohcfvar" path="res://assets/audio/cash_register.wav" id="2_1046x"]
+[ext_resource type="PackedScene" uid="uid://dun8xuy0cihwp" path="res://assets/scenes/Gun.tscn" id="2_gglyf"]
+[ext_resource type="PackedScene" uid="uid://b54ty7850mdge" path="res://assets/scenes/Health.tscn" id="3_b1af6"]
+[ext_resource type="AudioStream" uid="uid://bgxo5xn7q5vw7" path="res://assets/audio/buy_error.wav" id="4_gibjr"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_882je"]
-size = Vector3(2, 1, 1)
+size = Vector3(3, 1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ur8y0"]
 size = Vector3(2, 1, 1)
 
 [node name="Shop" type="Node3D" unique_id=2017740725]
+script = ExtResource("1_e1k3f")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1545296301]
 mesh = SubResource("BoxMesh_882je")
@@ -21,4 +27,18 @@ shape = SubResource("BoxShape3D_ur8y0")
 [node name="ShopItems" type="Node3D" parent="." unique_id=195103773]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.89911944, 0)
 
-[node name="Ammo" parent="ShopItems" unique_id=1006854039 instance=ExtResource("1_ur8y0")]
+[node name="Gun" parent="ShopItems" unique_id=1006854039 instance=ExtResource("2_gglyf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="Ammo" parent="ShopItems" unique_id=288512450 instance=ExtResource("1_ur8y0")]
+
+[node name="Health" parent="ShopItems" unique_id=295020959 instance=ExtResource("3_b1af6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="PurchaseAudio" type="AudioStreamPlayer3D" parent="." unique_id=1954221945]
+stream = ExtResource("2_1046x")
+volume_db = -30.0
+
+[node name="BuyFailAudio" type="AudioStreamPlayer3D" parent="." unique_id=292308046]
+stream = ExtResource("4_gibjr")
+volume_db = -50.0
