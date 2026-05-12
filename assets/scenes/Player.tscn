@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://g2k4frbd2cd2"]
 
 [ext_resource type="Script" uid="uid://c00rqvcef0b0h" path="res://assets/scripts/player.gd" id="1_jawt3"]
-[ext_resource type="Texture2D" uid="uid://dq81xrq6privs" path="res://assets/sprites/dev/revolver.png" id="2_y4xuf"]
+[ext_resource type="PackedScene" uid="uid://f5uovyisjcc1" path="res://assets/scenes/revolver.tscn" id="2_y4xuf"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_y4xuf"]
 
@@ -26,10 +26,4 @@ collision_mask = 3
 collide_with_areas = true
 collide_with_bodies = false
 
-[node name="Revolver" type="Sprite3D" parent="Camera3D" unique_id=474085906]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0999982, -0.44061, -1.7511077)
-no_depth_test = true
-render_priority = 1
-texture = ExtResource("2_y4xuf")
-
-[node name="WeaponRaycast" type="RayCast3D" parent="Camera3D" unique_id=7337420]
+[node name="Revolver" parent="Camera3D" unique_id=141155547 instance=ExtResource("2_y4xuf")]

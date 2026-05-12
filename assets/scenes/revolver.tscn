@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://f5uovyisjcc1"]
+
+[ext_resource type="Script" uid="uid://dcxmvav85wrhr" path="res://assets/scripts/gun.gd" id="1_rspsx"]
+[ext_resource type="Texture2D" uid="uid://dq81xrq6privs" path="res://assets/sprites/dev/revolver.png" id="2_vec6w"]
+[ext_resource type="Texture2D" uid="uid://2lbd8fr8wu04" path="res://assets/sprites/dev/revolver_fire.png" id="3_ulun3"]
+[ext_resource type="Texture2D" uid="uid://ctdss11yag51j" path="res://assets/sprites/dev/revolver_reload.png" id="4_a4xyp"]
+
+[node name="Revolver" type="Node3D" unique_id=141155547]
+script = ExtResource("1_rspsx")
+sprite_default = ExtResource("2_vec6w")
+sprite_firing = ExtResource("3_ulun3")
+sprite_reload = ExtResource("4_a4xyp")
+
+[node name="WeaponRaycast" type="RayCast3D" parent="." unique_id=1970537712]
+
+[node name="RevolverSprite" type="Sprite3D" parent="." unique_id=260490905]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0999982, -0.44061, -1.7511077)
+no_depth_test = true
+render_priority = 1
+texture = ExtResource("2_vec6w")
