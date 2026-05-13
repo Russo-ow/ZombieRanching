@@ -62,7 +62,6 @@ func end_reload():
 	clip += to_add
 
 func fire():
-	print(clip)
 	stopwatch = 0
 	if clip == 0:
 		audio_empty.play()
