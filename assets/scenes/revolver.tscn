@@ -39,7 +39,7 @@ texture = ExtResource("2_vec6w")
 [node name="FireAudio" type="AudioStreamPlayer3D" parent="." unique_id=1691065759]
 stream = SubResource("AudioStreamRandomizer_mdywr")
 attenuation_model = 3
-volume_db = -2.5
+volume_db = -1.5
 
 [node name="EmptyAudio" type="AudioStreamPlayer3D" parent="." unique_id=2049934000]
 stream = SubResource("AudioStreamRandomizer_j5v55")
